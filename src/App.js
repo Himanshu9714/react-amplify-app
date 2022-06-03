@@ -2,10 +2,23 @@ import logo from './logo.svg';
 import './App.css';
 import Amplify from 'aws-amplify';
 import awsConfig from './aws-exports';
+import { Analytics } from 'aws-amplify';
+import { useEffect } from 'react';
 
 Amplify.configure(awsConfig)
 
 function App() {
+
+  useEffect(() => {
+    Analytics.record("Home page visited!");
+    Analytics.record({
+      name: "UserSignIn",
+      attributes: {
+        userName: "Ram"
+      }
+    })
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">

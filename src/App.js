@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Amplify from 'aws-amplify';
+import awsConfig from './aws-exports';
+
+Amplify.configure(awsConfig)
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <p>Jay Shree Ram</p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
